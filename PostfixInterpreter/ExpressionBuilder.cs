@@ -35,11 +35,11 @@ namespace PostfixInterpreter
         {
             GuardAgainstOperator(@operator);
 
-            Expression first = stack.Pop();
             Expression second = stack.Pop();
+            Expression first = stack.Pop();
 
             var factory = creator.Create(@operator);
-            stack.Push(factory.Create(first, second));
+            stack.Push(factory(first, second));
 
             return this;
         }

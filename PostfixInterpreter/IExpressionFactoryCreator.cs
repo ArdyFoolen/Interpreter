@@ -8,6 +8,6 @@ namespace PostfixInterpreter
 {
     public interface IExpressionFactoryCreator
     {
-        IExpressionFactory Create(string @operator);
+        Func<Expression, Expression, Expression> Create(string @operator);
         bool HasFactoryFor(string @operator);    }
 }
